@@ -167,6 +167,18 @@ section {
 /* Hero section specific fixes */
 .hero-bg {
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Prevent animation-related layout shifts */
+[data-gsap] {
+  will-change: transform, opacity;
+}
+
+/* Ensure no gaps between sections */
+section + section {
+  margin-top: 0;
 }
 
 /* Smooth scrolling improvements */
